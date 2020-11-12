@@ -1,0 +1,10 @@
+## SECTION=networking
+
+config LIBWEBSOCKETS
+	bool
+	prompt "libwebsockets"
+	select HOST_CMAKE
+	select OPENSSL
+	help
+	  FIXME
+

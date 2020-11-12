@@ -1,0 +1,11 @@
+## SECTION=networking
+
+config WEBFUSE
+	bool
+	prompt "webfuse"
+	select HOST_MESON
+	select FUSE
+	select LIBWEBSOCKETS
+	help
+	  FIXME
+

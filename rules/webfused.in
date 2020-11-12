@@ -1,0 +1,25 @@
+## SECTION=networking
+
+menuconfig WEBFUSED
+        tristate
+        default n
+	select HOST_MESON
+	select WEBFUSE
+	select LIBWEBSOCKETS
+	select FUSE
+	select LIBCONFIG
+	select LINUX_PAM
+	prompt "webfused"
+        help
+	  FIXME
+
+if WEBFUSED
+
+config WEBFUSED_LOCAL_SRC
+        bool
+        default n
+        prompt "use local_src"
+        help
+          FIXME
+
+endif
