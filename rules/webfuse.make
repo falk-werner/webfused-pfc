@@ -11,14 +11,19 @@ PACKAGES-$(PTXCONF_WEBFUSE) += webfuse
 #
 # Paths and names
 #
-WEBFUSE_VERSION := 0.6.0
-WEBFUSE_MD5     := 8d4697d93a31abe24882539236dc8254
+WEBFUSE_VERSION := 0.7.0
+WEBFUSE_MD5     := 4f8b69196a634016da3c0e4f63e13590
 WEBFUSE         := webfuse-$(WEBFUSE_VERSION)
 WEBFUSE_SUFFIX  := tar.gz
-WEBFUSE_URL     := https://github.com/falk-werner/webfuse/archive/v$(WEBFUSE_VERSION).$(WEBFUSE_SUFFIX)
-WEBFUSE_SOURCE  := $(SRCDIR)/$(WEBFUSE).$(WEBFUSE_SUFFIX)
 WEBFUSE_DIR     := $(BUILDDIR)/$(WEBFUSE)
 WEBFUSE_LICENSE := LGPL-3.0-or-later
+
+ifndef PTXCONF_WEBFUSE_LOCAL_SRC
+WEBFUSE_URL     := https://github.com/falk-werner/webfuse/archive/v$(WEBFUSE_VERSION).$(WEBFUSE_SUFFIX)
+WEBFUSE_SOURCE  := $(SRCDIR)/$(WEBFUSE).$(WEBFUSE_SUFFIX)
+else
+WEBFUSE_URL     := file://$(PTXDIST_WORKSPACE)/local_src/webfuse
+endif
 
 # ----------------------------------------------------------------------------
 # Get

@@ -1,11 +1,23 @@
 ## SECTION=networking
 
-config WEBFUSE
-	bool
+menuconfig WEBFUSE
+	tristate
+	default n
 	prompt "webfuse"
 	select HOST_MESON
 	select FUSE
 	select LIBWEBSOCKETS
 	help
 	  FIXME
+
+if WEBFUSE
+
+config WEBFUSE_LOCAL_SRC
+	bool
+	default n
+	prompt "use local_src"
+	help
+	  FIXME
+
+endif
 
